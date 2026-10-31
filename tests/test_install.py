@@ -22,7 +22,7 @@ class InstallerTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory(prefix="ste install test ")
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name)
+        self.root = Path(self.temporary.name).resolve()
         self.project = self.root / "project with spaces"
         self.project.mkdir()
         self.codex = self.project / ".agents/skills/asd-ste100"
